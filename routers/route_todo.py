@@ -62,7 +62,7 @@ async def update_todo(request: Request, response: Response, id: str, data: TodoB
     raise HTTPException(
         status_code=404, detail="Update task failed")
 
-@router.delete("/aoi/todo/{id}", response_model=SuccessMsg)
+@router.delete("/api/todo/{id}", response_model=SuccessMsg)
 async def delete_todo(id: str):
     res = await db_delete_todo(id)
     if res:
